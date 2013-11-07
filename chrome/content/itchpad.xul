@@ -10,10 +10,30 @@
 <?xml-stylesheet href="chrome://browser/content/devtools/markup-view.css" type="text/css"?>
 <?xml-stylesheet href="chrome://browser/skin/devtools/markup-view.css" type="text/css"?>
 
+<?xul-overlay href="chrome://global/content/editMenuOverlay.xul"?>
+
 <!DOCTYPE window [
+<!ENTITY % scratchpadDTD SYSTEM "chrome://browser/locale/devtools/scratchpad.dtd" >
+ %scratchpadDTD;
+<!ENTITY % editMenuStrings SYSTEM "chrome://global/locale/editMenuOverlay.dtd">
+%editMenuStrings;
+<!ENTITY % sourceEditorStrings SYSTEM "chrome://browser/locale/devtools/sourceeditor.dtd">
+%sourceEditorStrings;
 ]>
 
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
+  <commandset id="itchpad-commandset">
+    <command id="cmd-save" oncommand="gItchpad.saveFile();"/>
+  </commandset>
+
+  <keyset id="itchpad-keyset">
+    <key id="key-save"
+         key="&saveFileCmd.commandkey;"
+         command="cmd-save"
+         modifiers="accel"/>
+  </keyset>
+
+
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8">
     var gItchpad = null;
