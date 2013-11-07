@@ -17,6 +17,8 @@
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
 
   <vbox flex="1">
+    <hbox id="itchpad-toolbar" class="devtools-tabbar">
+    </hbox>
     <hbox id="sources-body" flex="1">
       <vbox id="sources" flex="1"/>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
