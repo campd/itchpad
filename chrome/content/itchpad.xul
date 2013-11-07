@@ -15,10 +15,20 @@
 
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
+  <script type="application/javascript;version=1.8">
+    var gItchpad = null;
+
+    window.onload = function() {
+      var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
+      dump(wrapper);
+      dump(wrapper.wrappedJSObject);
+      var service = wrapper.wrappedJSObject;
+      gItchpad = service.initItchpad(document);
+    }
+  </script>
 
   <vbox flex="1">
-    <hbox id="itchpad-toolbar" class="devtools-tabbar">
-    </hbox>
+    <toolbar id="itchpad-toolbar" class="devtools-toolbar"/>
     <hbox id="sources-body" flex="1">
       <vbox id="sources" flex="1"/>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
