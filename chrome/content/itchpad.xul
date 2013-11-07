@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://itchpad/content/itchpad.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/content/devtools/widgets.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/content/devtools/debugger.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/devtools/common.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/devtools/toolbox.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/devtools/widgets.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/devtools/debugger.css" type="text/css"?>
+<?xml-stylesheet href="chrome://itchpad/skin/style.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/content/devtools/markup-view.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/devtools/markup-view.css" type="text/css"?>
+
+<!DOCTYPE window [
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
+  <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
+
+  <vbox flex="1">
+    <hbox id="sources-body" flex="1">
+      <vbox id="sources" flex="1"/>
+      <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
+      <vbox id="editors" flex="4"/>
+    </hbox>
+  </vbox>
+</window>
