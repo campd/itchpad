@@ -24,6 +24,9 @@
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
   <commandset id="itchpad-commandset">
     <command id="cmd-save" oncommand="gItchpad.saveFile();"/>
+    <command id="cmd-toggle-sources" oncommand="gItchpad.toggleSources();"/>
+    <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
+    <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
   </commandset>
 
   <keyset id="itchpad-keyset">
@@ -48,7 +51,21 @@
   </script>
 
   <vbox flex="1">
-    <toolbar id="itchpad-toolbar" class="devtools-toolbar"/>
+    <toolbar id="itchpad-toolbar" class="devtools-toolbar">
+      <toolbarbutton id="toggle-sources"
+        class="pane-toggle"
+        command="cmd-toggle-sources"/>
+      <hbox id="nav-controls">
+        <toolbarbutton id="back"
+                     class="devtools-toolbarbutton"
+                     label="&lt;"
+                     command="cmd-back"/>
+        <toolbarbutton id="forward"
+                     class="devtools-toolbarbutton"
+                     label="&gt;"
+                     command="cmd-forward"/>
+      </hbox>
+    </toolbar>
     <hbox id="sources-body" flex="1">
       <vbox id="sources" flex="1"/>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>

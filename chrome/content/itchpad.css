@@ -2,3 +2,47 @@
   overflow-x: auto;
   overflow-y: auto;
 }
+
+#nav-controls > toolbarbutton {
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: none;
+  border-radius: 0;
+  border-width: 0;
+  -moz-border-end-width: 1px;
+  outline-offset: -3px;
+}
+
+toolbarbutton.devtools-toolbarbutton {
+  min-width: 0;
+}
+
+#nav-controls > toolbarbutton:last-of-type {
+  -moz-border-end-width: 0;
+}
+
+#nav-controls {
+  box-shadow: 0 1px 0 hsla(210,16%,76%,.15) inset,
+              0 0 0 1px hsla(210,16%,76%,.15) inset,
+              0 1px 0 hsla(210,16%,76%,.15);
+  border: 1px solid hsla(210,8%,5%,.45);
+  border-radius: 3px;
+  margin: 0 3px;
+}
+
+.pane-toggle {
+  background: none;
+  box-shadow: none;
+  border: none;
+  list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+.pane-toggle[pane-collapsed] {
+  list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
+}
+
+.pane-toggle:active {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
