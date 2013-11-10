@@ -41,12 +41,24 @@
   <script type="application/javascript;version=1.8">
     var gItchpad = null;
 
+    function setToolbox(toolbox) {
+      window.gToolbox = toolbox;
+      dump("gToolbox is now: " + toolbox + "\n");
+      if (gItchpad) {
+        gItchpad.setToolbox(gToolbox);
+      }
+    }
+
     window.onload = function() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
       dump(wrapper);
       dump(wrapper.wrappedJSObject);
       var service = wrapper.wrappedJSObject;
       gItchpad = service.initItchpad(document);
+      dump("creating itchpad, which is now: " + gToolbox + "\n");
+      if (gToolbox) {
+        gItchpad.setToolbox(gToolbox);
+      }
     }
   </script>
 
