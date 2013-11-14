@@ -23,8 +23,7 @@
 
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
   <commandset id="itchpad-commandset">
-    <command id="cmd-save" oncommand="gItchpad.saveFile();"/>
-    <command id="cmd-toggle-sources" oncommand="gItchpad.toggleSources();"/>
+    <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
     <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
   </commandset>
