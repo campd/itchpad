@@ -3,7 +3,11 @@
   overflow-y: auto;
 }
 
-#nav-controls > toolbarbutton {
+#itchpad-toolbar {
+  padding: 0px 3px;
+}
+
+.toolbar-group > toolbarbutton {
   margin: 0;
   padding-left: 5px;
   padding-right: 5px;
@@ -18,17 +22,61 @@ toolbarbutton.devtools-toolbarbutton {
   min-width: 0;
 }
 
-#nav-controls > toolbarbutton:last-of-type {
+.toolbar-group > toolbarbutton:last-of-type {
   -moz-border-end-width: 0;
 }
 
-#nav-controls {
+.toolbar-group {
   box-shadow: 0 1px 0 hsla(210,16%,76%,.15) inset,
               0 0 0 1px hsla(210,16%,76%,.15) inset,
               0 1px 0 hsla(210,16%,76%,.15);
   border: 1px solid hsla(210,8%,5%,.45);
   border-radius: 3px;
-  margin: 0 3px;
+  margin: 4px 3px;
+}
+
+#pair-choice > toolbarbutton {
+  text-shadow: none;
+  min-height: 24px;
+  padding: 0px 4px;
+}
+
+#pair-remote {
+  list-style-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#pair-remote:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+#pair-remote:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+#pair-remote[selected=true] {
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+}
+
+#pair-local {
+  list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#pair-local:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#pair-local:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+#pair-local[checked=true] {
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+}
+
+#pair-choice:not([sources~="local"]) > #pair-local {
+  display: none;
+}
+
+#pair-choice:not([sources~="remote"]) > #pair-remote {
+  display: none;
 }
 
 .pane-toggle {

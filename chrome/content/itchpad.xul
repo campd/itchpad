@@ -67,7 +67,7 @@
       <toolbarbutton id="toggle-sources"
         class="pane-toggle"
         command="cmd-toggle-sources"/>
-      <hbox id="nav-controls">
+      <hbox id="nav-controls" class="toolbar-group">
         <toolbarbutton id="back"
                      class="devtools-toolbarbutton"
                      label="&lt;"
@@ -76,6 +76,11 @@
                      class="devtools-toolbarbutton"
                      label="&gt;"
                      command="cmd-forward"/>
+      </hbox>
+      <spacer flex="1"/>
+      <hbox id="pair-choice">
+        <toolbarbutton id="pair-remote" class="devtools-tab"/>
+        <toolbarbutton id="pair-local" class="devtools-tab"/>
       </hbox>
     </toolbar>
     <hbox id="sources-body" flex="1">
