@@ -26,6 +26,8 @@
     <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
     <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
+    <command id="sp-cmd-inspect" oncommand="void(0);"/>
+    <command id="sp-cmd-run" oncommand="void(0);"/>
   </commandset>
 
   <keyset id="itchpad-keyset">
@@ -33,6 +35,14 @@
          key="&saveFileCmd.commandkey;"
          command="cmd-save"
          modifiers="accel"/>
+    <key id="key-run"
+       key="&run.key;"
+       command="sp-cmd-run"
+       modifiers="accel"/>
+    <key id="key-inspect"
+       key="&inspect.key;"
+       command="sp-cmd-inspect"
+       modifiers="accel"/>
   </keyset>
 
 
