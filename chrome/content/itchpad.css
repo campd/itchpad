@@ -1,10 +1,18 @@
-#sources {
+.sources-tree {
   overflow-x: auto;
   overflow-y: auto;
 }
 
+.sources-tree {
+  overflow
+}
+
 #itchpad-toolbar {
   padding: 0px 3px;
+}
+
+.tree-collapsed .children {
+  display: none;
 }
 
 .toolbar-group > toolbarbutton {
@@ -55,7 +63,7 @@ toolbarbutton.devtools-toolbarbutton {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-#pair-local {
+.source-local {
   list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }

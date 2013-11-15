@@ -72,30 +72,37 @@
   </script>
 
   <vbox flex="1">
-    <toolbar id="itchpad-toolbar" class="devtools-toolbar">
-      <toolbarbutton id="toggle-sources"
-        class="pane-toggle"
-        command="cmd-toggle-sources"/>
-      <hbox id="nav-controls" class="toolbar-group">
-        <toolbarbutton id="back"
-                     class="devtools-toolbarbutton"
-                     label="&lt;"
-                     command="cmd-back"/>
-        <toolbarbutton id="forward"
-                     class="devtools-toolbarbutton"
-                     label="&gt;"
-                     command="cmd-forward"/>
-      </hbox>
-      <spacer flex="1"/>
-      <hbox id="pair-choice">
-        <toolbarbutton id="pair-remote" class="devtools-tab"/>
-        <toolbarbutton id="pair-local" class="devtools-tab"/>
-      </hbox>
-    </toolbar>
     <hbox id="sources-body" flex="1">
-      <vbox id="sources" flex="1"/>
+      <tabbox id="sources-tabs" class="devtools-sidebar-tabs">
+        <tabs>
+          <tab id="sources-local-tab" label="Local"/>
+          <tab id="sources-page-tab" label="Page"/>
+        </tabs>
+        <tabpanels flex="1">
+          <tabpanel id="sources-local" class="sources-tree side-menu-widget-container" theme="dark" orient="vertical"/>
+          <tabpanel id="sources-page" class="side-menu-widget-container" theme="dark" orient="vertical"/>
+        </tabpanels>
+      </tabbox>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
-      <vbox id="editors" flex="4"/>
+      <vbox id="editors" flex="4">
+        <toolbar id="itchpad-toolbar" class="devtools-toolbar">
+          <hbox id="nav-controls" class="toolbar-group">
+            <toolbarbutton id="back"
+                         class="devtools-toolbarbutton"
+                         label="&lt;"
+                         command="cmd-back"/>
+            <toolbarbutton id="forward"
+                         class="devtools-toolbarbutton"
+                         label="&gt;"
+                         command="cmd-forward"/>
+          </hbox>
+          <spacer flex="1"/>
+          <hbox id="pair-choice">
+            <toolbarbutton id="pair-remote" class="devtools-tab remote-source"/>
+            <toolbarbutton id="pair-local" class="devtools-tab local-source"/>
+          </hbox>
+        </toolbar>
+      </vbox>
     </hbox>
   </vbox>
 </window>
