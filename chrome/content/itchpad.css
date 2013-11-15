@@ -48,6 +48,10 @@ toolbarbutton.devtools-toolbarbutton {
   padding: 0px 4px;
 }
 
+.refresh-button {
+  list-style-image: url("chrome://browser/skin/sync-16.png");
+}
+
 .source-remote {
   list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);

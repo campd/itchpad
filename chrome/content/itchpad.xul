@@ -90,6 +90,7 @@
         </tabs>
         <tabpanels flex="1"/>
       </tabbox>
+      <toolbar id="project-toolbar" class="devtools-toolbar"></toolbar>
       </vbox>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
       <vbox id="editors" flex="4">
