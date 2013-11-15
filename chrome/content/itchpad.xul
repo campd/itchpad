@@ -57,6 +57,7 @@
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8">
     var gItchpad = null;
+    var gToolbox = null;
 
     function setToolbox(toolbox) {
       window.gToolbox = toolbox;
@@ -69,10 +70,7 @@
     window.onload = function() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
       var service = wrapper.wrappedJSObject;
-      gItchpad = service.initItchpad(document);
-      if (gToolbox) {
-        gItchpad.setToolbox(gToolbox);
-      }
+      gItchpad = service.initItchpad(document, gToolbox);
     }
   </script>
 
