@@ -21,7 +21,7 @@
 %sourceEditorStrings;
 ]>
 
-<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body" style="overflow: auto">
   <commandset id="itchpad-commandset">
     <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
@@ -60,11 +60,8 @@
 
     window.onload = function() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
-      dump(wrapper);
-      dump(wrapper.wrappedJSObject);
       var service = wrapper.wrappedJSObject;
       gItchpad = service.initItchpad(document);
-      dump("creating itchpad, which is now: " + gToolbox + "\n");
       if (gToolbox) {
         gItchpad.setToolbox(gToolbox);
       }
@@ -73,16 +70,21 @@
 
   <vbox flex="1">
     <hbox id="sources-body" flex="1">
-      <tabbox id="sources-tabs" class="devtools-sidebar-tabs">
+      <vbox style="">
+      <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
         <tabs>
-          <tab id="sources-local-tab" label="Local"/>
-          <tab id="sources-page-tab" label="Page"/>
+          <tab id="sources-local-tab">
+            <image class="source-local"/>
+            <label>Local</label>
+          </tab>
+          <tab id="sources-page-tab">
+            <image class="source-remote"/>
+            <label>Page</label>
+          </tab>
         </tabs>
-        <tabpanels flex="1">
-          <tabpanel id="sources-local" class="sources-tree side-menu-widget-container" theme="dark" orient="vertical"/>
-          <tabpanel id="sources-page" class="side-menu-widget-container" theme="dark" orient="vertical"/>
-        </tabpanels>
+        <tabpanels flex="1"/>
       </tabbox>
+      </vbox>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
       <vbox id="editors" flex="4">
         <toolbar id="itchpad-toolbar" class="devtools-toolbar">
@@ -98,8 +100,8 @@
           </hbox>
           <spacer flex="1"/>
           <hbox id="pair-choice">
-            <toolbarbutton id="pair-remote" class="devtools-tab remote-source"/>
-            <toolbarbutton id="pair-local" class="devtools-tab local-source"/>
+            <toolbarbutton id="pair-remote" class="devtools-tab source-remote"/>
+            <toolbarbutton id="pair-local" class="devtools-tab source-local"/>
           </hbox>
         </toolbar>
       </vbox>

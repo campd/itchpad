@@ -1,14 +1,13 @@
 .sources-tree {
-  overflow-x: auto;
-  overflow-y: auto;
-}
-
-.sources-tree {
-  overflow
+  overflow: auto;
 }
 
 #itchpad-toolbar {
   padding: 0px 3px;
+}
+
+#sources-tabs > tabs > tab > image {
+  padding-right: 4px;
 }
 
 .tree-collapsed .children {
@@ -49,17 +48,17 @@ toolbarbutton.devtools-toolbarbutton {
   padding: 0px 4px;
 }
 
-#pair-remote {
-  list-style-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
+.source-remote {
+  list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
-#pair-remote:hover {
+.source-remote:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
-#pair-remote:hover:active {
+.source-remote:hover:active {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
-#pair-remote[selected=true] {
+.source-remote[selected=true] {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
@@ -67,15 +66,15 @@ toolbarbutton.devtools-toolbarbutton {
   list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
-#pair-local:hover {
+.source-local:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-#pair-local:hover:active {
+.source-local:hover:active {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
 
-#pair-local[checked=true] {
+.source-local[checked=true] {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
