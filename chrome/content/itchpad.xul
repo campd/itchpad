@@ -21,7 +21,15 @@
 %sourceEditorStrings;
 ]>
 
-<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body" style="overflow: auto">
+<window id="itchpad-window"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="theme-body"
+        title="Itchpad"
+        windowtype="devtools:itchpad"
+        macanimcationtype="document"
+        fullscreenbutton="true"
+        screenX="4" screenY="4"
+        width="640" height="480"
+        persist="screenX screenY width height sizemode">
   <commandset id="itchpad-commandset">
     <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
@@ -45,7 +53,7 @@
        modifiers="accel"/>
   </keyset>
 
-
+  <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8">
     var gItchpad = null;
