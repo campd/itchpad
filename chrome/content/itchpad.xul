@@ -84,12 +84,12 @@
       <vbox style="">
       <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
         <tabs>
-          <tab id="sources-local-tab">
-            <image class="source-local"/>
+          <tab id="sources-project-tab">
+            <image class="source-project"/>
             <label>Local</label>
           </tab>
-          <tab id="sources-page-tab">
-            <image class="source-remote"/>
+          <tab id="sources-live-tab">
+            <image class="source-live"/>
             <label>Page</label>
           </tab>
         </tabs>
@@ -114,8 +114,8 @@
           <spacer flex="1"/>
           <hbox id="plugin-toolbar-right"/>
           <hbox id="pair-choice">
-            <toolbarbutton id="pair-remote" class="devtools-tab source-remote"/>
-            <toolbarbutton id="pair-local" class="devtools-tab source-local"/>
+            <toolbarbutton id="pair-live" class="devtools-tab source-live"/>
+            <toolbarbutton id="pair-project" class="devtools-tab source-project"/>
           </hbox>
         </toolbar>
       </vbox>

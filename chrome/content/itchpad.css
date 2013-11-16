@@ -63,41 +63,41 @@ toolbarbutton.devtools-toolbarbutton {
   list-style-image: url("chrome://browser/skin/sync-16.png");
 }
 
-.source-remote {
+.source-live {
   list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
-.source-remote:hover {
+.source-live:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
-.source-remote:hover:active {
+.source-live:hover:active {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
-.source-remote[selected=true] {
+.source-live[selected=true] {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-.source-local {
+.source-project {
   list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
-.source-local:hover {
+.source-project:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-.source-local:hover:active {
+.source-project:hover:active {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
 
-.source-local[checked=true] {
+.source-project[checked=true] {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-#pair-choice:not([sources~="local"]) > #pair-local {
+#pair-choice:not([sources~="project"]) > #pair-project {
   display: none;
 }
 
-#pair-choice:not([sources~="remote"]) > #pair-remote {
+#pair-choice:not([sources~="live"]) > #pair-live {
   display: none;
 }
 
