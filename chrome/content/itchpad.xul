@@ -57,7 +57,7 @@
        key="&inspect.key;"
        command="sp-cmd-inspect"
        modifiers="accel"/>
-  <key id="sp-key-hideSidebar"
+  <key id="key-hideSidebar"
        keycode="VK_ESCAPE"
        command="cmd-hide-sidebar"/>
   </keyset>
