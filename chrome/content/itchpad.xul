@@ -37,6 +37,7 @@
     <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
     <command id="sp-cmd-inspect" oncommand="void(0);"/>
     <command id="sp-cmd-run" oncommand="void(0);"/>
+    <command id="cmd-hide-sidebar" oncommand="gItchpad.hideSidebar()"/>
   </commandset>
 
   <keyset id="itchpad-keyset">
@@ -56,6 +57,9 @@
        key="&inspect.key;"
        command="sp-cmd-inspect"
        modifiers="accel"/>
+  <key id="sp-key-hideSidebar"
+       keycode="VK_ESCAPE"
+       command="cmd-hide-sidebar"/>
   </keyset>
 
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
@@ -118,6 +122,14 @@
             <toolbarbutton id="pair-project" class="devtools-tab source-project"/>
           </hbox>
         </toolbar>
+      </vbox>
+      <splitter id="sidebar-splitter" class="devtools-side-splitter"/>
+      <vbox id="sidebar-box" class="generic-toggled-side-pane" width="250" hidden="true">
+        <tabbox id="sidebar" class="devtools-sidebar-tabs"
+                flex="1">
+          <tabs hidden="true"/>
+          <tabpanels flex="1"/>
+        </tabbox>
       </vbox>
     </hbox>
   </vbox>
