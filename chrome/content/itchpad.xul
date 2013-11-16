@@ -98,7 +98,7 @@
       <toolbar id="project-toolbar" class="devtools-toolbar"></toolbar>
       </vbox>
       <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
-      <vbox id="editors" flex="4">
+      <vbox id="shells" flex="4">
         <toolbar id="itchpad-toolbar" class="devtools-toolbar">
           <hbox id="nav-controls" class="toolbar-group">
             <toolbarbutton id="back"

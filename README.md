@@ -10,6 +10,8 @@ x Pair: When a live resource and project resource are associated with each other
 
 x Aspects: Live and Project are two Aspects of a Pair.
 
-x Shell: A viewer for a pair.
+x Shell: A viewer for a pair.  Would like a better name for this.
 
 x Editor: a single text editor
+
+x ShellDeck: a deck of shells.
