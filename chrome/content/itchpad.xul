@@ -110,7 +110,9 @@
                          label="&gt;"
                          command="cmd-forward"/>
           </hbox>
+          <hbox id="plugin-toolbar-left"/>
           <spacer flex="1"/>
+          <hbox id="plugin-toolbar-right"/>
           <hbox id="pair-choice">
             <toolbarbutton id="pair-remote" class="devtools-tab source-remote"/>
             <toolbarbutton id="pair-local" class="devtools-tab source-local"/>

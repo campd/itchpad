@@ -1,4 +1,8 @@
 
+.plugin-hidden {
+  display: none;
+}
+
 .sources-tree {
   overflow:auto;
   -moz-user-focus: true;
