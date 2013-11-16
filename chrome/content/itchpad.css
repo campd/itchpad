@@ -93,11 +93,11 @@ toolbarbutton.devtools-toolbarbutton {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-#pair-choice:not([sources~="project"]) > #pair-project {
+#pair-choice:not([aspects~="project"]) > #pair-project {
   display: none;
 }
 
-#pair-choice:not([sources~="live"]) > #pair-live {
+#pair-choice:not([aspects~="live"]) > #pair-live {
   display: none;
 }
 
