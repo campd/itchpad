@@ -31,6 +31,7 @@
         width="640" height="480"
         persist="screenX screenY width height sizemode">
   <commandset id="itchpad-commandset">
+    <command id="cmd-new" oncommand="void(0);"/>
     <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
     <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
@@ -39,6 +40,10 @@
   </commandset>
 
   <keyset id="itchpad-keyset">
+    <key id="key-new"
+         key="&newWindowCmd.commandkey;"
+         command="cmd-new"
+         modifiers="accel"/>
     <key id="key-save"
          key="&saveFileCmd.commandkey;"
          command="cmd-save"

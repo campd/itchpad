@@ -1,5 +1,12 @@
+
 .sources-tree {
-  overflow:auto
+  overflow:auto;
+  -moz-user-focus: true;
+}
+
+.sources-tree input {
+  margin: 2px;
+  border: 1px solid gray;
 }
 
 #itchpad-toolbar {
