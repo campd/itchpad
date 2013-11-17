@@ -79,7 +79,7 @@
     window.onload = function() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
       var service = wrapper.wrappedJSObject;
-      gItchpad = service.initItchpad(document, gToolbox);
+      gItchpad = service.initItchpad(window, gToolbox);
     }
   </script>
 
