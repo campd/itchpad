@@ -40,6 +40,8 @@
     <command id="cmd-hide-sidebar" oncommand="gItchpad.hideSidebar()"/>
   </commandset>
 
+  <commandset id="editMenuCommands"/>
+
   <keyset id="itchpad-keyset">
     <key id="key-new"
          key="&newWindowCmd.commandkey;"
@@ -62,7 +64,36 @@
        command="cmd-hide-sidebar"/>
   </keyset>
 
+  <keyset id="editMenuKeys"/>
+
+  <menubar id="itchpad-menubar">
+    <menu id="file-menu" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
+      <menupopup id="file-menu-popup">
+      </menupopup>
+    </menu>
+
+
+    <menu id="sp-edit-menu" label="&editMenu.label;"
+          accesskey="&editMenu.accesskey;">
+      <menupopup id="sp-menu_editpopup"
+                 onpopupshowing="goUpdateSourceEditorMenuItems()">
+        <menuitem id="menu_undo"/>
+        <menuitem id="menu_redo"/>
+        <menuseparator/>
+        <menuitem id="menu_cut"/>
+        <menuitem id="menu_copy"/>
+        <menuitem id="menu_paste"/>
+        <menuseparator/>
+        <menuitem id="menu_selectAll"/>
+        <menuseparator/>
+        <menuitem id="menu_find"/>
+        <menuitem id="menu_findAgain"/>
+      </menupopup>
+    </menu>
+  </menubar>
+
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
+
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8">
     var gItchpad = null;
@@ -81,7 +112,14 @@
       var service = wrapper.wrappedJSObject;
       gItchpad = service.initItchpad(window, gToolbox);
     }
-  </script>
+
+    function goUpdateSourceEditorMenuItems() {
+      goUpdateGlobalEditMenuItems();
+      goUpdateGlobalEditMenuItems();
+      let commands = ['cmd_undo', 'cmd_redo', 'cmd_delete', 'cmd_findAgain'];
+      commands.forEach(goUpdateCommand);
+    }
+</script>
 
   <vbox flex="1">
     <hbox id="sources-body" flex="1">

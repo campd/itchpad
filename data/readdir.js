@@ -40,7 +40,11 @@ function readDir(path, ignore) {
 };
 
 onmessage = function (event) {
+  try {
   postMessage(readDir(event.data.path, event.data.ignore));
+} catch(ex) {
+  console.log(ex);
+}
 };
 
 
