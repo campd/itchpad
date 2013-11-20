@@ -154,10 +154,6 @@
           <hbox id="plugin-toolbar-left"/>
           <spacer flex="1"/>
           <hbox id="plugin-toolbar-right"/>
-          <hbox id="pair-choice">
-            <toolbarbutton id="pair-live" class="devtools-tab source-live"/>
-            <toolbarbutton id="pair-project" class="devtools-tab source-project"/>
-          </hbox>
         </toolbar>
       </vbox>
       <splitter id="sidebar-splitter" class="devtools-side-splitter"/>
