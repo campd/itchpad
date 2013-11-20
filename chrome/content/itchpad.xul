@@ -72,7 +72,6 @@
       </menupopup>
     </menu>
 
-
     <menu id="sp-edit-menu" label="&editMenu.label;"
           accesskey="&editMenu.accesskey;">
       <menupopup id="sp-menu_editpopup"
