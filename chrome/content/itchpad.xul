@@ -33,6 +33,8 @@
   <commandset id="itchpad-commandset">
     <command id="cmd-new" oncommand="void(0);"/>
     <command id="cmd-save" oncommand="void(0);"/>
+    <command id="cmd-saveas" oncommand="void(0);"/>
+    <command id="cmd-open" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
     <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
     <command id="sp-cmd-inspect" oncommand="void(0);"/>
@@ -50,6 +52,10 @@
     <key id="key-save"
          key="&saveFileCmd.commandkey;"
          command="cmd-save"
+         modifiers="accel"/>
+    <key id="key-open"
+         key="&openFileCmd.commandkey;"
+         command="cmd-open"
          modifiers="accel"/>
     <key id="key-run"
        key="&run.key;"
