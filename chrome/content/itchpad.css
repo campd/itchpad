@@ -52,6 +52,10 @@ toolbarbutton.devtools-toolbarbutton {
   margin: 4px 3px;
 }
 
+#itchpad-toolbar textbox {
+  margin: 4px;
+}
+
 #pair-choice > toolbarbutton {
   text-shadow: none;
   min-height: 24px;
