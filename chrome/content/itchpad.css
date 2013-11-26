@@ -62,6 +62,10 @@ toolbarbutton.devtools-toolbarbutton {
   padding: 0px 4px;
 }
 
+.results-panel-item-match {
+  font-weight: bold;
+}
+
 .refresh-button {
   list-style-image: url("chrome://browser/skin/sync-16.png");
 }
