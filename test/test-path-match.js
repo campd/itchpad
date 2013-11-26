@@ -54,9 +54,11 @@ exports["test annotate"] = function(assert) {
   annotate("a/b", "a/b/c", "<a/b>/c", "Explicit separator match");
   annotate("/a", "/a", "</a>", "Leading separator");
   annotate("b", "a/b/c", "a/<b>/c", "Center match");
+  annotate("a", "a/b/a", "a/b/<a>", "Prefer later matches.");
+  annotate("itchpad.js", "itchpad/lib/itchpad.js", "itchpad/lib/<itchpad.js>", "Prefer later matches, real example.");
 }
 
-exports["test annotate"] = function(assert) {
+exports["test score"] = function(assert) {
   function score(search, path, expected, name) {
     let re = match.pathMatchExpression(search);
     let value = match.score(re, path);
