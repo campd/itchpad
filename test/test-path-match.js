@@ -20,13 +20,40 @@ exports["test simple match"] = function(assert) {
   matchPath("abc", "a/b/c", "Characters spread across path");
   matchPath("abc", "ab/c", "Characters grouped 1");
   matchPath("abc", "ab/bc", "Characters grouped 2");
-  matchPath("ac", "/bin/activate", "Activate should match");
   matchPath("a/b", "a/b/c", "Explicit separator match");
-
+  matchPath("/a", "/a", "Leading separator");
+  matchPath("a/", "a/", "Trailing separator");
 
   dontMatchPath("ab", "ba", "Out of order");
   dontMatchPath("b", "abc", "Word boundary");
   dontMatchPath("a/b", "ab", "Unmet explicit separator match.")
+
+
+}
+
+exports["test annotate"] = function(assert) {
+  function annotate(search, path, expected, name) {
+    let re = match.pathMatchExpression(search);
+    let annotated = match.annotate(re, path);
+
+    let value = "";
+    for (let frag of annotated) {
+      if (frag.matched) {
+        value += "<" + frag.fragment + ">";
+      } else {
+        value += frag.fragment;
+      }
+    }
+
+    assert.equal(expected, value, name);
+  }
+
+  annotate("abc", "abc", "<abc>", "Exact match");
+  annotate("abc", "a/b/c", "<a>/<b>/<c>", "Characters spread across path");
+  annotate("abc", "ab/c", "<ab>/<c>", "Characters grouped 1");
+  annotate("abc", "ab/bc", "<a>b/<bc>", "Characters grouped 2");
+  annotate("a/b", "a/b/c", "<a/b>/c", "Explicit separator match");
+  annotate("/a", "/a", "</a>", "Leading separator");
 }
 
 require("sdk/test").run(exports);
