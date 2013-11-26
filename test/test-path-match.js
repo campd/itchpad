@@ -23,12 +23,11 @@ exports["test simple match"] = function(assert) {
   matchPath("a/b", "a/b/c", "Explicit separator match");
   matchPath("/a", "/a", "Leading separator");
   matchPath("a/", "a/", "Trailing separator");
+  matchPath("b", "a/b/c", "Center match");
 
   dontMatchPath("ab", "ba", "Out of order");
   dontMatchPath("b", "abc", "Word boundary");
-  dontMatchPath("a/b", "ab", "Unmet explicit separator match.")
-
-
+  dontMatchPath("a/b", "ab", "Unmet explicit separator match.");
 }
 
 exports["test annotate"] = function(assert) {
@@ -54,6 +53,23 @@ exports["test annotate"] = function(assert) {
   annotate("abc", "ab/bc", "<a>b/<bc>", "Characters grouped 2");
   annotate("a/b", "a/b/c", "<a/b>/c", "Explicit separator match");
   annotate("/a", "/a", "</a>", "Leading separator");
+  annotate("b", "a/b/c", "a/<b>/c", "Center match");
+}
+
+exports["test annotate"] = function(assert) {
+  function score(search, path, expected, name) {
+    let re = match.pathMatchExpression(search);
+    let value = match.score(re, path);
+    assert.equal(expected, value, name);
+  }
+
+  score("q", "abc", 0, "No match");
+  score("abc", "abc", 3, "Exact match");
+  score("abc", "a/b/c", 1, "Characters spread across path");
+  score("abc", "ab/c", 2, "Characters grouped 1");
+  score("abc", "ab/bc", 2, "Characters grouped 2");
+  score("a/b", "a/b/c", 3, "Explicit separator match");
+  score("b", "a/b/c", 1, "Center match");
 }
 
 require("sdk/test").run(exports);
