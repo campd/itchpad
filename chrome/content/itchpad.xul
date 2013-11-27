@@ -101,6 +101,7 @@
 
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8">
+<![CDATA[
     var gItchpad = null;
     var gToolbox = null;
 
@@ -115,7 +116,15 @@
     window.onload = function() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
       var service = wrapper.wrappedJSObject;
-      gItchpad = service.initItchpad(window, gToolbox);
+
+      let args = window.arguments;
+      let project = null;
+      if (args && args[0] instanceof Components.interfaces.nsIDialogParamBlock) {
+        console.log("GOT A DIALOG PARAM BLOCK");
+        project = args[0].GetString(0);
+      }
+
+      gItchpad = service.initItchpad(window, project, gToolbox);
     }
 
     function goUpdateSourceEditorMenuItems() {
@@ -124,6 +133,7 @@
       let commands = ['cmd_undo', 'cmd_redo', 'cmd_delete', 'cmd_findAgain'];
       commands.forEach(goUpdateCommand);
     }
+]]>
 </script>
 
   <vbox flex="1">
