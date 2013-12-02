@@ -113,7 +113,7 @@
       }
     }
 
-    window.onload = function() {
+    function init() {
       var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
       var service = wrapper.wrappedJSObject;
 
@@ -126,6 +126,8 @@
 
       gItchpad = service.initItchpad(window, project, gToolbox);
     }
+
+    window.onload = init;
 
     function goUpdateSourceEditorMenuItems() {
       goUpdateGlobalEditMenuItems();
