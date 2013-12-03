@@ -4,7 +4,7 @@ function editClick(thing, location) {
   var wrapper = Components.classes["@mozilla.org/devtools/itchpad;1"].getService(Components.interfaces.nsISupports);
   var service = wrapper.wrappedJSObject;
 
-  service.openPath(OS.Path.join(location, "manifest.webapp"));
+  service.openManifest(OS.Path.join(location, "manifest.webapp"));
 }
 
 window.UI.targetsForManifest = new Map();

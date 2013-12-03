@@ -107,7 +107,6 @@
 
     function setToolbox(toolbox) {
       window.gToolbox = toolbox;
-      dump("gToolbox is now: " + toolbox + "\n");
       if (gItchpad) {
         gItchpad.setToolbox(gToolbox);
       }
@@ -120,11 +119,12 @@
       let args = window.arguments;
       let project = null;
       if (args && args[0] instanceof Components.interfaces.nsIDialogParamBlock) {
-        console.log("GOT A DIALOG PARAM BLOCK");
         project = args[0].GetString(0);
       }
 
-      gItchpad = service.initItchpad(window, project, gToolbox);
+      service.initItchpad(window, project, gToolbox).then(pad => {
+        gItchpad = pad;
+      });
     }
 
     window.onload = init;
