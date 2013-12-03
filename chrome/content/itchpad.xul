@@ -140,7 +140,7 @@
 
   <vbox flex="1">
     <hbox id="sources-body" flex="1">
-      <vbox style="">
+      <vbox width="250">
       <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
         <tabs>
           <tab id="sources-project-tab">
