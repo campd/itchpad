@@ -138,50 +138,60 @@
 ]]>
 </script>
 
-  <vbox flex="1">
-    <hbox id="sources-body" flex="1">
-      <vbox width="250">
-      <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
-        <tabs>
-          <tab id="sources-project-tab">
-            <image class="source-project"/>
-            <label>Local</label>
-          </tab>
-          <tab id="sources-live-tab">
-            <image class="source-live"/>
-            <label>Page</label>
-          </tab>
-        </tabs>
-        <tabpanels flex="1"/>
-      </tabbox>
-      <toolbar id="project-toolbar" class="devtools-toolbar"></toolbar>
-      </vbox>
-      <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
-      <vbox id="shells" flex="4">
-        <toolbar id="itchpad-toolbar" class="devtools-toolbar">
-          <hbox id="nav-controls" class="toolbar-group">
-            <toolbarbutton id="back"
-                         class="devtools-toolbarbutton"
-                         label="&lt;"
-                         command="cmd-back"/>
-            <toolbarbutton id="forward"
-                         class="devtools-toolbarbutton"
-                         label="&gt;"
-                         command="cmd-forward"/>
-          </hbox>
-          <hbox id="plugin-toolbar-left"/>
-          <spacer flex="1"/>
-          <hbox id="plugin-toolbar-right"/>
-        </toolbar>
-      </vbox>
-      <splitter id="sidebar-splitter" class="devtools-side-splitter"/>
-      <vbox id="sidebar-box" class="generic-toggled-side-pane" width="250" hidden="true">
-        <tabbox id="sidebar" class="devtools-sidebar-tabs"
-                flex="1">
-          <tabs hidden="true"/>
-          <tabpanels flex="1"/>
-        </tabbox>
-      </vbox>
-    </hbox>
-  </vbox>
+  <deck id="main-deck" flex="1">
+    <vbox flex="1" id="source-deckitem">
+      <hbox id="sources-body" flex="1">
+        <vbox width="250">
+          <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
+            <tabs>
+              <tab id="sources-project-tab">
+                <image class="source-project"/>
+                <label>Local</label>
+              </tab>
+              <tab id="sources-live-tab">
+                <image class="source-live"/>
+                <label>Page</label>
+              </tab>
+            </tabs>
+            <tabpanels flex="1"/>
+          </tabbox>
+          <toolbar id="project-toolbar" class="devtools-toolbar"></toolbar>
+        </vbox>
+        <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
+        <vbox id="shells" flex="4">
+          <toolbar id="itchpad-toolbar" class="devtools-toolbar">
+            <hbox id="nav-controls" class="toolbar-group">
+              <toolbarbutton id="back"
+                           class="devtools-toolbarbutton"
+                           label="&lt;"
+                           command="cmd-back"/>
+              <toolbarbutton id="forward"
+                           class="devtools-toolbarbutton"
+                           label="&gt;"
+                           command="cmd-forward"/>
+            </hbox>
+            <hbox id="plugin-toolbar-left"/>
+            <spacer flex="1"/>
+            <hbox id="plugin-toolbar-right"/>
+          </toolbar>
+        </vbox>
+        <splitter id="sidebar-splitter" class="devtools-side-splitter"/>
+        <vbox id="sidebar-box" class="generic-toggled-side-pane" width="250" hidden="true">
+          <tabbox id="sidebar" class="devtools-sidebar-tabs"
+                  flex="1">
+            <tabs hidden="true"/>
+            <tabpanels flex="1"/>
+          </tabbox>
+        </vbox>
+      </hbox>
+    </vbox>
+    <vbox flex="1" id="project-settings" class="theme-body">
+      <toolbar id="project-settings-toolbar" class="devtools-toolbar">
+        <toolbarbutton id="project-settings-close" class="devtools-closebutton"></toolbarbutton>
+        <h1>Project Settings: <span id="project-settings-name"></span></h1>
+      </toolbar>
+      <hbox id="settings-hbox" flex="1" class="theme-body">
+      </hbox>
+    </vbox>
+  </deck>
 </window>

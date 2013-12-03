@@ -40,7 +40,6 @@ function modifyProjects() {
     let projectsUI = projects.contentWindow.UI;
     let topUI = window.UI;
 
-
     let realStart = projectsUI.start;
     let realOpen = topUI.openAndShowToolboxForTarget;
 
