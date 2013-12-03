@@ -9,6 +9,12 @@ function editClick(thing, location) {
 
 window.UI.targetsForManifest = new Map();
 
+window.UI.refreshManifest = function(path) {
+  let projects = document.querySelector(".projects-panel");
+  // XXX: fix the button
+  projects.contentWindow.UI.update({}, OS.Path.dirname(path));
+}
+
 function modifyProjects() {
   let projects = document.querySelector(".projects-panel");
 
