@@ -7,6 +7,8 @@ function editClick(thing, location) {
   service.openPath(OS.Path.join(location, "manifest.webapp"));
 }
 
+window.UI.targetsForManifest = new Map();
+
 function modifyProjects() {
   let projects = document.querySelector(".projects-panel");
 
@@ -25,6 +27,31 @@ function modifyProjects() {
     edit.textContent = "Edit";
 
     buttons.insertBefore(edit, buttons.firstChild);
+
+    // This is really hacky, but I really don't want to edit firefox
+    // right now.  Will file an app-manager bug to make this less
+    // hacky.
+    let projectsUI = projects.contentWindow.UI;
+    let topUI = window.UI;
+
+
+    let realStart = projectsUI.start;
+    let realOpen = topUI.openAndShowToolboxForTarget;
+
+    projectsUI.start = function(project) {
+      let manifest = OS.Path.join(OS.Path.normalize(project.location), "manifest.webapp");
+
+      topUI.openAndShowToolboxForTarget = function(target, name, icon) {
+        window.UI.targetsForManifest.set(manifest, target);
+        let event = new CustomEvent("NewTarget");
+        window.document.dispatchEvent(event);
+
+        topUI.openAndShowToolboxForTarget = realOpen;
+        return topUI.openAndShowToolboxForTarget(target, name, icon);
+      };
+
+      return realStart.call(projectsUI, project);
+    }
   }
 
   projects.addEventListener("load", doModifyProjects);
