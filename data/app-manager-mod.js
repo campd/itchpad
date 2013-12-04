@@ -48,6 +48,11 @@ function modifyProjects() {
 
       topUI.openAndShowToolboxForTarget = function(target, name, icon) {
         window.UI.targetsForManifest.set(manifest, target);
+        target.on("close", () => {
+          if (window.UI.targetsForManifest.get(manifest) === target) {
+            window.UI.targetsForManifest.delete(manifest);
+          }
+        });
         let event = new CustomEvent("NewTarget");
         window.document.dispatchEvent(event);
 
