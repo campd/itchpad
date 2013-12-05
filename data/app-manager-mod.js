@@ -32,7 +32,7 @@ function modifyProjects() {
     edit.setAttribute("template", '{"type":"attribute","path":"location","name":"data-location"}');
     edit.textContent = "Edit";
 
-    buttons.insertBefore(edit, buttons.firstChild);
+    buttons.appendChild(edit);
 
     // This is really hacky, but I really don't want to edit firefox
     // right now.  Will file an app-manager bug to make this less
