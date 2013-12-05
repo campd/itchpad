@@ -143,7 +143,7 @@
       <hbox id="sources-body" flex="1">
         <vbox width="250">
           <tabbox id="sources-tabs" class="devtools-sidebar-tabs" flex="1">
-            <tabs>
+            <tabs hidden="true">
               <tab id="sources-project-tab">
                 <image class="source-project"/>
                 <label>Local</label>
