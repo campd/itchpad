@@ -59,6 +59,10 @@ exports["test annotate"] = function(assert) {
 }
 
 exports["test score"] = function(assert) {
+  function  expandScore(longestMatch, charsIn) {
+    return (longestMatch << 16) + (charsIn & 0xffff);
+  }
+
   function score(search, path, expected, name) {
     let re = match.pathMatchExpression(search);
     let value = match.score(re, path);
@@ -66,12 +70,13 @@ exports["test score"] = function(assert) {
   }
 
   score("q", "abc", 0, "No match");
-  score("abc", "abc", 3, "Exact match");
-  score("abc", "a/b/c", 1, "Characters spread across path");
-  score("abc", "ab/c", 2, "Characters grouped 1");
-  score("abc", "ab/bc", 2, "Characters grouped 2");
-  score("a/b", "a/b/c", 3, "Explicit separator match");
-  score("b", "a/b/c", 1, "Center match");
+  score("abc", "abc", expandScore(3, 0), "Exact match");
+  score("abc", "a/b/c", expandScore(1, 0), "Characters spread across path");
+  score("abc", "ab/c", expandScore(2, 0), "Characters grouped 1");
+  score("abc", "ab/bc", expandScore(2, 0), "Characters grouped 2");
+  score("a/b", "a/b/c", expandScore(3, 0), "Explicit separator match");
+  score("b", "a/b/c", expandScore(1, 2), "Center match");
+  score("a", "a/a/a", expandScore(1, 4), "Match last");
 }
 
 require("sdk/test").run(exports);
