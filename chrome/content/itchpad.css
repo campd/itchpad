@@ -71,7 +71,8 @@ toolbarbutton.devtools-toolbarbutton {
 }
 
 .settings-button {
-  list-style-image: url("chrome://browser/skin/devtools/tool-options.png");
+  list-style-image: url("chrome://browser/skin/devtools/option-icon.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
 }
 
 .source-live {
