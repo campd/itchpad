@@ -49,5 +49,4 @@ Now reload the `chrome://itchpad/content/itchpad.xul` page and it should be runn
 
 This is automated with the `grunt watch` command.  See the [gruntfile](Gruntfile.js for more information).  Run:
 
-    npm install
     grunt watch
