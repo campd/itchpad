@@ -22,12 +22,13 @@
 ## To Run Locally
 
     git clone git@github.com:bgrins/itchpad.git
-    git clone https://github.com/mozilla/addon-sdk.git
     cd itchpad
 
-    # Can be run with either of these
-    ../addon-sdk/bin/cfx run # run in fresh profile for testing
-    ../addon-sdk/bin/cfx xpi # get an xpi
+    # Can be run with either of these.
+    # The -b is optional, but will run with a specified binary (see the [docs](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/cfx#cfx_run))
+    ../addon-sdk/bin/cfx run -b /path/to/fx-team/obj-x86_64-apple-darwin12.5.0/dist/NightlyDebug.app/Contents/MacOS/firefox
+
+    ../addon-sdk/bin/cfx xpi # get an xpi and run it in another profile
 
 Once it is running, start Scratchpad from the web developer menu (it currently monkeypatches scratchpad to open itchpad).  Or, you can open   `chrome://itchpad/content/itchpad.xul` in the browser window - this allows the content to be inspected better than the scratchpad window, however it doesn't associate the window with a current page.
 
