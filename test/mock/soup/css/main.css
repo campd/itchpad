@@ -1,0 +1,104 @@
+
+body {
+	background: url(../img/lines.png);
+	padding-top: 40px;
+	font-family: 'PT Sans', "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.sunny {
+	font-family: cursive;
+	font-size: 22px;
+	line-height: 30px;
+	color: #555;
+	margin-left: 35px;
+}
+
+.main {
+	background-image: url(../img/landscape.jpg);
+	background-position: -790px -260px;
+	background-repeat: no-repeat;
+
+	border: solid 2px #CCC;
+	border-top: none;
+	border-bottom: none;
+	box-shadow: 0 10px 20px #AAA;
+}
+
+h2 {
+	color: #F8A15D;
+	text-decoration: underline;
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom:20px;
+}
+
+.logo {
+	position:absolute;
+	top:10px;
+	right:0;
+}
+
+.banner {
+	min-height: 600px;
+}
+
+.callout {
+	margin-top: 40px;
+	padding-top: 20px;
+	padding: 20px;
+	border: 20px solid #EDEDED;
+	border-right:none;
+	background: rgba(255, 255, 255, .85);
+	border-radius: 5px 0 0 5px;
+	position:relative;
+}
+
+.selling-points {
+	margin-top: 35px;
+	margin-bottom: 35px;
+	list-style-position: inside;
+}
+.selling-points li {
+	margin: 25px 0;
+}
+
+.callout-inner {
+	border-left: 2px solid #ccc;
+	padding-left: 10px;
+}
+.action {
+	padding: 10px;
+}
+
+.nested {
+	padding: 10px;
+}
+
+.blur {
+	background: rgba(255, 255, 255, 0.9);
+	border-top: solid 5px #AAA;
+	padding-bottom: 15px;
+}
+
+.footer {
+	border-top: solid 10px black;
+	-moz-box-shadow: -5px -5px 10px #aaa;
+	-webkit-box-shadow: -5px -5px 10px #AAA;
+	box-shadow: -5px -5px 10px #AAA;
+	background-color: #222;
+	background-image: url(../img/footer-bg.png);
+	color: #777;
+	margin-top: 5px;
+	min-height: 150px;
+}
+
+.footer .nested {
+	text-align: center;
+}
+
+.footer ul {
+	margin:0;
+	list-style:none;
+}
+

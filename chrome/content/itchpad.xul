@@ -77,6 +77,20 @@
       </menupopup>
     </menu>
 
+    <menupopup id="directory-menu-popup">
+      <menuitem id="add-new"
+                label="New..."
+                command="cmd-new"/>
+    </menupopup>
+    <menupopup id="individual-file-menu-popup">
+      <menuitem id="add-new"
+                label="New..."
+                command="cmd-new"/>
+      <menuitem id="remove-file"
+                label="Remove (not implemented)"
+                command=""/>
+    </menupopup>
+
     <menu id="sp-edit-menu" label="&editMenu.label;"
           accesskey="&editMenu.accesskey;">
       <menupopup id="sp-menu_editpopup"
