@@ -76,12 +76,6 @@
       <menupopup id="file-menu-popup">
       </menupopup>
     </menu>
-
-    <menupopup id="directory-menu-popup">
-      <menuitem id="add-new"
-                label="New..."
-                command="cmd-new"/>
-    </menupopup>
     <menupopup id="individual-file-menu-popup">
       <menuitem id="add-new"
                 label="New..."
@@ -109,6 +103,18 @@
       </menupopup>
     </menu>
   </menubar>
+
+
+  <popupset>
+    <menupopup id="directory-menu-popup">
+      <menuitem id="add-new-project"
+                label="New..."
+                command="cmd-new"/>
+      <menuitem id="remove-project"
+                label="Remove this folder"
+                command="remove-project-dir"/>
+    </menupopup>
+  </popupset>
 
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
 
