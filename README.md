@@ -21,6 +21,7 @@
 
 ## To Run Locally
 
+    git clone https://github.com/mozilla/addon-sdk.git
     git clone git@github.com:bgrins/itchpad.git
     cd itchpad
 

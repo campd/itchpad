@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         options: {
           stdout: true
         },
-        command: "cfx xpi"
+        command: "../addon-sdk/bin/cfx xpi"
       },
       postXpi: {
         options: {
