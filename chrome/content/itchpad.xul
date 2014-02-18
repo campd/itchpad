@@ -32,6 +32,7 @@
   <commandset id="itchpad-commandset">
     <command id="cmd-new" oncommand="void(0);"/>
     <command id="cmd-save" oncommand="void(0);"/>
+    <command id="cmd-delete" oncommand="void(0);"/>
     <command id="cmd-saveas" oncommand="void(0);"/>
     <command id="cmd-open" oncommand="void(0);"/>
     <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
