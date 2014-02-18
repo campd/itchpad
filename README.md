@@ -29,16 +29,23 @@
     ../addon-sdk/bin/cfx run # run in fresh profile for testing
     ../addon-sdk/bin/cfx xpi # get an xpi
 
-Once it is running, start Scratchpad from the web developer menu (it currently monkeypatches scratchpad to open itchpad).
+Once it is running, start Scratchpad from the web developer menu (it currently monkeypatches scratchpad to open itchpad).  Or, you can open   `chrome://itchpad/content/itchpad.xul` in the browser window - this allows the content to be inspected better than the scratchpad window, however it doesn't associate the window with a current page.
 
-## To Auto Run
+I also set the [logging level](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/console#Logging_Levels) for extensions so I can see console.logs - extensions.sdk.console.logLevel -> "all".
 
-Install https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/.  Open chrome://itchpad/content/itchpad.xul in browser window - this allows the content to be inspected better than the scratchpad window.  More about this on the [Getting started with cfx page](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_With_cfx).
+## To auto run after updates
+
+There are some tools to make the workflow quicker than running `cfx run` or reinstalling the xpi after each change.
+
+Install https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/.   More about this on the [Getting started with cfx page](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_With_cfx).
 
 Make changes to project, then run:
 
     ../addon-sdk/bin/cfx xpi ; wget --post-file=itchpad.xpi http://localhost:8888/
 
-Now reload the chrome://itchpad/content/itchpad.xul page and it should be running the latest version.
+Now reload the `chrome://itchpad/content/itchpad.xul` page and it should be running the latest version.
 
-I also set the [logging level](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/console#Logging_Levels) for extensions so I can see console.logs - extensions.sdk.console.logLevel -> "all".
+This is automated with the `grunt watch` command.  See the [gruntfile](Gruntfile.js for more information).  Run:
+
+    npm install
+    grunt watch
