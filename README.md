@@ -37,7 +37,7 @@ Install https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/.  Open chr
 
 Make changes to project, then run:
 
-    cfx xpi ; wget --post-file=itchpad.xpi http://localhost:8888/
+    ../addon-sdk/bin/cfx xpi ; wget --post-file=itchpad.xpi http://localhost:8888/
 
 Now reload the chrome://itchpad/content/itchpad.xul page and it should be running the latest version.
 
