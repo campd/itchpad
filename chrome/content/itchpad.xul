@@ -110,6 +110,9 @@
       <menuitem id="add-new-file"
                 label="New..."
                 command="cmd-new"/>
+      <menuitem id="open-file-in-tab"
+                label="Open"
+                command="live-preview-project"/>
       <menuitem id="remove-project"
                 label="Remove this folder"
                 command="remove-project-dir"/>
@@ -120,7 +123,6 @@
   </popupset>
 
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
-
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8" src="itchpad-window.js"></script>
 
