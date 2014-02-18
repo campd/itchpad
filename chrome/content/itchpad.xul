@@ -107,12 +107,15 @@
 
   <popupset>
     <menupopup id="directory-menu-popup">
-      <menuitem id="add-new-project"
+      <menuitem id="add-new-file"
                 label="New..."
                 command="cmd-new"/>
       <menuitem id="remove-project"
                 label="Remove this folder"
                 command="remove-project-dir"/>
+      <menuitem id="delete-file"
+                label="Delete"
+                command="cmd-delete"/>
     </menupopup>
   </popupset>
 
