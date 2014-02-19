@@ -111,7 +111,7 @@
                 label="New..."
                 command="cmd-new"/>
       <menuitem id="open-file-in-tab"
-                label="Open"
+                label="Open in tab"
                 command="live-preview-project"/>
       <menuitem id="remove-project"
                 label="Remove this folder"
