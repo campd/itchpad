@@ -32,10 +32,9 @@
   <commandset id="itchpad-commandset">
     <command id="cmd-new" oncommand="void(0);"/>
     <command id="cmd-save" oncommand="void(0);"/>
+    <command id="cmd-delete" oncommand="void(0);"/>
     <command id="cmd-saveas" oncommand="void(0);"/>
     <command id="cmd-open" oncommand="void(0);"/>
-    <command id="cmd-back" oncommand="gItchpad.editors.back();"/>
-    <command id="cmd-forward" oncommand="gItchpad.editors.forward();"/>
     <command id="sp-cmd-inspect" oncommand="void(0);"/>
     <command id="sp-cmd-run" oncommand="void(0);"/>
     <command id="cmd-hide-sidebar" oncommand="gItchpad.hideSidebar()"/>
@@ -110,6 +109,9 @@
       <menuitem id="add-new-file"
                 label="New..."
                 command="cmd-new"/>
+      <menuitem id="open-file-in-tab"
+                label="Open In Tab"
+                command="live-preview-project"/>
       <menuitem id="remove-project"
                 label="Remove this folder"
                 command="remove-project-dir"/>
@@ -120,7 +122,6 @@
   </popupset>
 
   <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
-
   <script type="application/javascript;version=1.8" src="chrome://browser/content/devtools/theme-switching.js"></script>
   <script type="application/javascript;version=1.8" src="itchpad-window.js"></script>
 
@@ -135,16 +136,6 @@
         <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
         <vbox id="shells" flex="4">
           <toolbar id="itchpad-toolbar" class="devtools-toolbar">
-            <hbox id="nav-controls" class="toolbar-group">
-              <toolbarbutton id="back"
-                           class="devtools-toolbarbutton"
-                           label="&lt;"
-                           command="cmd-back"/>
-              <toolbarbutton id="forward"
-                           class="devtools-toolbarbutton"
-                           label="&gt;"
-                           command="cmd-forward"/>
-            </hbox>
             <hbox id="plugin-toolbar-left"/>
             <spacer flex="1"/>
             <hbox id="plugin-toolbar-right"/>
