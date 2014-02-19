@@ -70,7 +70,7 @@
 
   <keyset id="editMenuKeys"/>
 
-  <menubar id="itchpad-menubar">
+  <menubar id="itchpad-menubar" hidden="true">
     <menu id="file-menu" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
       <menupopup id="file-menu-popup">
       </menupopup>
