@@ -12,6 +12,10 @@
   border: 1px solid gray;
 }
 
+#itchpad-toolbar {
+  min-height: 27px;
+  background: rgb(225, 225, 225);
+}
 #main-deck .sources-tree {
   background: rgb(225, 225, 225);
 }
@@ -23,6 +27,13 @@
 #main-deck .sources-tree .side-menu-widget-item:hover {
   background: rgba(0, 0, 0, .05);
   cursor: pointer;
+}
+
+#main-deck .sources-tree .side-menu-widget-item {
+  border: none;
+  box-shadow: none;
+  line-height: 24px;
+  vertical-align: middle;
 }
 
 #main-deck .sources-tree .side-menu-widget-item.selected {
@@ -39,22 +50,13 @@
   font-weight: bold;
   font-size: 1.05em;
   cursor: default;
+  line-height: 32px;
 }
 
 #main-deck .sources-tree li.child:only-child .side-menu-widget-group-title .expander {
   display: none;
 }
 
-#main-deck .sources-tree .side-menu-widget-item {
-  border: none;
-  box-shadow: none;
-  line-height: 30px;
-  vertical-align: middle;
-}
-
-/*#main-deck .sources-tree .side-menu-widget-item.selected {
-  background: rgb(96, 161, 212);
-}*/
 #sources-tabs > tabs > tab > image {
   padding-right: 4px;
 }
