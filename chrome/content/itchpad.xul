@@ -130,7 +130,7 @@
         <vbox width="250">
           <vbox id="sources" flex="1">
           </vbox>
-          <toolbar id="project-toolbar" class="devtools-toolbar"></toolbar>
+          <toolbar id="project-toolbar" class="devtools-toolbar" hidden="true"></toolbar>
         </vbox>
         <splitter id="source-editor-splitter" class="devtools-side-splitter"/>
         <vbox id="shells" flex="4">
