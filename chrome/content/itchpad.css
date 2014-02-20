@@ -41,7 +41,7 @@
   cursor: default;
 }
 
-#main-deck .sources-tree .side-menu-widget-group-title .expander {
+#main-deck .sources-tree li.child:only-child .side-menu-widget-group-title .expander {
   display: none;
 }
 
