@@ -108,9 +108,9 @@
       <menuitem id="add-new-file"
                 label="New..."
                 command="cmd-new"/>
-      <menuitem id="open-file-in-tab"
+      <!-- <menuitem id="open-file-in-tab"
                 label="Open In Tab"
-                command="live-preview-project"/>
+                command="live-preview-project"/> -->
       <menuitem id="remove-project"
                 label="Remove this folder"
                 command="remove-project-dir"/>
