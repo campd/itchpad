@@ -34,7 +34,7 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    window.postMessage("/Users/bgrinstead/Sites/itchpad/test/mock/soup/css", "*");
+    // window.postMessage("/path/to/folder", "*");
   });
 }
 

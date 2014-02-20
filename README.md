@@ -19,6 +19,14 @@
 
 * ShellDeck: a deck of shells.
 
+## Embedding
+
+Install the extension, then open a frame with the URL `chrome://itchpad/content/itchpad.xul`.
+
+If you would like to set the project to open only a single path on the filesystem, you can run:
+
+    window.postMessage("/path/to/folder", "*")
+
 ## To Run Locally
 
     git clone https://github.com/mozilla/addon-sdk.git
