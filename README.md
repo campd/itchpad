@@ -27,6 +27,10 @@ If you would like to set the project to open only a single path on the filesyste
 
     window.postMessage("/path/to/folder", "*")
 
+Or if you have access to the gItchpad object, you can:
+
+    gItchpad.setProjectToSinglePath("/path/to/folder")
+
 ## To Run Locally
 
     git clone https://github.com/mozilla/addon-sdk.git
