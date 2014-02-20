@@ -13,8 +13,9 @@
 }
 
 #itchpad-toolbar {
-  min-height: 27px;
-  background: rgb(225, 225, 225);
+  min-height: 22px;
+  height: 22px;
+  background: rgb(237, 237, 237);
 }
 #main-deck .sources-tree {
   background: rgb(225, 225, 225);
@@ -73,6 +74,11 @@
   text-shadow: none;
   min-height: 24px;
   padding: 0px 4px;
+}
+
+.itchpad-file-label {
+  font-weight: bold;
+  padding-left: 29px;
 }
 
 .results-panel-item-match {
