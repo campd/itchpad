@@ -5,7 +5,6 @@
 <?xml-stylesheet href="chrome://browser/skin/devtools/common.css" type="text/css"?>
 <?xml-stylesheet href="chrome://browser/skin/devtools/widgets.css" type="text/css"?>
 <?xml-stylesheet href="chrome://browser/skin/devtools/debugger.css" type="text/css"?>
-<?xml-stylesheet href="chrome://itchpad/skin/style.css" type="text/css"?>
 <?xml-stylesheet href="chrome://browser/content/devtools/markup-view.css" type="text/css"?>
 <?xml-stylesheet href="chrome://browser/skin/devtools/markup-view.css" type="text/css"?>
 

@@ -17,24 +17,7 @@ function receiveMessage(event)
     return;
   }
   let path = event.data;
-  let project = gItchpad.project;
-  setTimeout(function() {
-
-  let paths = [];
-  for (let model of gItchpad.projectTree.models) {
-    console.log(model.displayName, model);
-    paths.push(model.path);
-  }
-
-  for (let path of paths) {
-    project.removePath(path);
-  }
-  project.addPath(path);
-  project.save().then(() => {
-    project.refresh();
-  });
-
-  }, 1000);
+  gItchpad.setProjectToSinglePath(path);
 }
 
 function init() {
@@ -51,11 +34,11 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    // window.postMessage("/Users/bgrinstead/Sites/itchpad/test/mock/soup/js", "*");
+    window.postMessage("/Users/bgrinstead/Sites/itchpad/test/mock/soup/css", "*");
   });
 }
 
-window.onload = init;
+window.addEventListener("load", init, true);
 
 function goUpdateSourceEditorMenuItems() {
   goUpdateGlobalEditMenuItems();
