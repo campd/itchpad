@@ -27,6 +27,12 @@ If you would like to set the project to open only a single path on the filesyste
 
     window.postMessage("/path/to/folder", "*")
 
+This can temporarily also take the form of | separated values of path|name|version|iconUrl|iframePreview.  Iframe preview is the URL to open when the project root is clicked
+
+    window.postMessage("/path/to/folder|Project Name|Version #|icon-sample.png|http://localhost", "*");
+
+    window.postMessage("/path/to/folder", "*")
+
 Or if you have access to the gItchpad object, you can:
 
     gItchpad.setProjectToSinglePath("/path/to/folder")
@@ -43,7 +49,11 @@ Or if you have access to the gItchpad object, you can:
 
     ../addon-sdk/bin/cfx xpi # get an xpi and run it in another profile
 
-Once it is running, start Scratchpad from the web developer menu (it currently monkeypatches scratchpad to open itchpad).  Or, you can open   `chrome://itchpad/content/itchpad.xul` in the browser window - this allows the content to be inspected better than the scratchpad window, however it doesn't associate the window with a current page.
+Once it the browser is running, you can open   `chrome://itchpad/content/itchpad.xul` in the main window - this allows the content to be inspected better than a popup window.
+
+To open in a new window, you can use:
+
+    window.open("chrome://itchpad/content/itchpad.xul","Itchpad","resizable,scrollbars,status");
 
 I also set the [logging level](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/console#Logging_Levels) for extensions so I can see console.logs - extensions.sdk.console.logLevel -> "all".
 

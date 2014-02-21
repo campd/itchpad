@@ -41,7 +41,7 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    // window.postMessage("/Users/bgrinstead/Sites/itchpad/test/mock/soup|Project Name|Version|icon-sample.png|http://localhost", "*");
+    // window.postMessage("/path/to/folder|Project Name|Version|icon-sample.png|http://localhost", "*");
   });
 }
 
