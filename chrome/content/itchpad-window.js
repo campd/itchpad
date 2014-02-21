@@ -21,7 +21,8 @@ function receiveMessage(event)
   let opts = {
     name: data[1],
     version: data[2],
-    iconUrl: data[3]
+    iconUrl: data[3],
+    iframeSrc: data[4]
   };
   gItchpad.setProjectToSinglePath(path, opts);
 }
@@ -40,7 +41,7 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    // window.postMessage("test/mock/soup|Project Name|Version|icon-sample.png", "*");
+    // window.postMessage("/Users/bgrinstead/Sites/itchpad/test/mock/soup|Project Name|Version|icon-sample.png|http://localhost", "*");
   });
 }
 
