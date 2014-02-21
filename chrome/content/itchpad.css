@@ -31,6 +31,7 @@
 
 #main-deck .sources-tree .side-menu-widget-item .file-label {
   vertical-align: middle;
+  display: inline-block;
 }
 #main-deck .sources-tree .side-menu-widget-item .file-icon {
   content: "";
@@ -125,6 +126,9 @@
   padding-right: 4px;
 }
 
+.editor-image {
+  padding: 10px;
+}
 .tree-collapsed .children {
   display: none;
 }

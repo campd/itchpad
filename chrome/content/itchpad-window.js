@@ -16,8 +16,14 @@ function receiveMessage(event)
     console.log("Itchpad: message received too early", event);
     return;
   }
-  let path = event.data;
-  gItchpad.setProjectToSinglePath(path);
+  let data = event.data.split("|");
+  let path = data[0];
+  let opts = {
+    name: data[1],
+    version: data[2],
+    iconUrl: data[3]
+  };
+  gItchpad.setProjectToSinglePath(path, opts);
 }
 
 function init() {
@@ -34,7 +40,7 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    // window.postMessage("/path/to/folder", "*");
+    // window.postMessage("test/mock/soup|Project Name|Version|icon-sample.png", "*");
   });
 }
 
