@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     watch: {
-        files: ['chrome/**/*', 'lib/**/*'],
+        files: ['chrome/**/*', 'lib/**/*', 'data/**/*'],
         tasks: ['build'],
         // livereload: true,
         options: {
