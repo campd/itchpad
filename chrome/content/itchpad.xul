@@ -28,31 +28,16 @@
         screenX="4" screenY="4"
         width="640" height="480"
         persist="screenX screenY width height sizemode">
-  <commandset id="itchpad-commandset">
-    <command id="cmd-delete" oncommand="void(0);"/>
-    <command id="sp-cmd-inspect" oncommand="void(0);"/>
-    <command id="sp-cmd-run" oncommand="void(0);"/>
-  </commandset>
 
+  <commandset id="itchpad-commandset" />
   <commandset id="editMenuCommands"/>
-
-  <keyset id="itchpad-keyset">
-    <key id="key-run"
-       key="&run.key;"
-       command="sp-cmd-run"
-       modifiers="accel"/>
-    <key id="key-inspect"
-       key="&inspect.key;"
-       command="sp-cmd-inspect"
-       modifiers="accel"/>
-  </keyset>
-
+  <keyset id="itchpad-keyset" />
   <keyset id="editMenuKeys"/>
 
+  <!-- XXX: Let plugins declare their own menu items -->
   <menubar id="itchpad-menubar">
     <menu id="file-menu" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
-      <menupopup id="file-menu-popup">
-      </menupopup>
+      <menupopup id="file-menu-popup" />
     </menu>
 
     <menu id="sp-edit-menu" label="&editMenu.label;"
