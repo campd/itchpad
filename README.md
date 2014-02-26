@@ -39,15 +39,22 @@ Or if you have access to the gItchpad object, you can:
 
 ## To Run Locally
 
-    git clone https://github.com/mozilla/addon-sdk.git
+The basic workflow is generating an XPI file and adding this to the browser with your specified profile.  This is automated with [grunt](http://gruntjs.com/getting-started).  See the [gruntfile](Gruntfile.js for more information).  Run:
+
+    # If you don't have grunt yet installed
+    npm install -g grunt-cli
+
     git clone git@github.com:bgrins/itchpad.git
     cd itchpad
+    npm install
+    grunt build # Will download addon sdk locally, and generate an itchpad.xpi file
 
-    # Can be run with either of these.
+What if I don't want to use grunt?  This just wraps up the addon sdk, so if you have the cfx binary somewhere on your path, you can do whatever you want with it:
+
     # The -b is optional, but will run with a specified binary (see the [docs](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/cfx#cfx_run))
-    ../addon-sdk/bin/cfx run -b /path/to/fx-team/obj-x86_64-apple-darwin12.5.0/dist/NightlyDebug.app/Contents/MacOS/firefox
+    cfx run -b /path/to/fx-team/obj-x86_64-apple-darwin12.5.0/dist/NightlyDebug.app/Contents/MacOS/firefox
 
-    ../addon-sdk/bin/cfx xpi # get an xpi and run it in another profile
+    cfx xpi # get an xpi and run it in another profile
 
 Once it the browser is running, you can open   `chrome://itchpad/content/itchpad.xul` in the main window - this allows the content to be inspected better than a popup window.
 
@@ -63,13 +70,15 @@ There are some tools to make the workflow quicker than running `cfx run` or rein
 
 Install https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/.   More about this on the [Getting started with cfx page](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_With_cfx).
 
-Make changes to project, then run:
+Then run:
 
-    ../addon-sdk/bin/cfx xpi ; wget --post-file=itchpad.xpi http://localhost:8888/
+    grunt watch
+
+Now just make changes to the project and it will auto post to the running browser.
+
+If you'd rather use your own cfx, then use:
+
+    cfx xpi
+    wget --post-file=itchpad.xpi http://localhost:8888/
 
 Now reload the `chrome://itchpad/content/itchpad.xul` page and it should be running the latest version.
-
-This is automated with the `grunt watch` command.  See the [gruntfile](Gruntfile.js for more information).  Run:
-
-    npm install
-    grunt watch
