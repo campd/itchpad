@@ -84,6 +84,9 @@
             <spacer flex="1"/>
             <hbox id="plugin-toolbar-right"/>
           </toolbar>
+          <box id="shells-deck-container" flex="4"></box>
+          <toolbar id="itchpad-toolbar-bottom" class="devtools-toolbar">
+          </toolbar>
         </vbox>
         <splitter id="sidebar-splitter" class="devtools-side-splitter"/>
         <vbox id="sidebar-box" class="generic-toggled-side-pane" width="250" hidden="true">

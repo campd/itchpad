@@ -216,3 +216,11 @@
 .pane-toggle:active {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
+
+
+/* Plugins */
+
+.itchpad-basic-display {
+  padding: 0 3px;
+}
+
