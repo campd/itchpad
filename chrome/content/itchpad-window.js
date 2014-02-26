@@ -41,7 +41,7 @@ function init() {
     gItchpad = pad;
 
     // USAGE::
-    window.postMessage("/Users/bgrinstead/Sites/itchpad|Project Name|Version|icon-sample.png|http://localhost", "*");
+    // window.postMessage("/bin/|Project Name|Version|icon-sample.png|http://localhost", "*");
   });
 }
 
