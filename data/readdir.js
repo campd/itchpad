@@ -1,18 +1,27 @@
 importScripts("resource://gre/modules/osfile.jsm");
 
-function readDir(path, ignore) {
+function readDir(path, ignore, maxDepth = Infinity) {
   let ret = {};
 
   let set = new Set();
 
   let info = OS.File.stat(path);
-  info.path = path;
-  set.add(info);
+  set.add({
+    path: path,
+    name: info.name,
+    isDir: info.isDir,
+    isSymLink: info.isSymLink,
+    depth: 0
+  });
 
   for (let info of set) {
     let children = [];
 
     if (info.isDir && !info.isSymLink) {
+      if (info.depth > maxDepth) {
+        continue;
+      }
+
       let iterator = new OS.File.DirectoryIterator(info.path);
       try {
         for (let child in iterator) {
@@ -21,7 +30,13 @@ function readDir(path, ignore) {
           }
 
           children.push(child.path);
-          set.add(child);
+          set.add({
+            path: child.path,
+            name: child.name,
+            isDir: child.isDir,
+            isSymLink: child.isSymLink,
+            depth: info.depth + 1
+          });
         }
       } finally {
         iterator.close();
@@ -32,7 +47,8 @@ function readDir(path, ignore) {
       name: info.name,
       isDir: info.isDir,
       isSymLink: info.isSymLink,
-      children: children
+      depth: info.depth,
+      children: children,
     };
   }
 
@@ -41,10 +57,12 @@ function readDir(path, ignore) {
 
 onmessage = function (event) {
   try {
-  postMessage(readDir(event.data.path, event.data.ignore));
-} catch(ex) {
-  console.log(ex);
-}
+    let {path, ignore, depth} = event.data;
+    let message = readDir(path, ignore, depth);
+    postMessage(message);
+  } catch(ex) {
+    console.log(ex);
+  }
 };
 
 
