@@ -29,31 +29,14 @@
         width="640" height="480"
         persist="screenX screenY width height sizemode">
   <commandset id="itchpad-commandset">
-    <command id="cmd-new" oncommand="void(0);"/>
-    <command id="cmd-save" oncommand="void(0);"/>
     <command id="cmd-delete" oncommand="void(0);"/>
-    <command id="cmd-saveas" oncommand="void(0);"/>
-    <command id="cmd-open" oncommand="void(0);"/>
     <command id="sp-cmd-inspect" oncommand="void(0);"/>
     <command id="sp-cmd-run" oncommand="void(0);"/>
-    <command id="cmd-hide-sidebar" oncommand="gItchpad.hideSidebar()"/>
   </commandset>
 
   <commandset id="editMenuCommands"/>
 
   <keyset id="itchpad-keyset">
-    <key id="key-new"
-         key="&newWindowCmd.commandkey;"
-         command="cmd-new"
-         modifiers="accel"/>
-    <key id="key-save"
-         key="&saveFileCmd.commandkey;"
-         command="cmd-save"
-         modifiers="accel"/>
-    <key id="key-open"
-         key="&openFileCmd.commandkey;"
-         command="cmd-open"
-         modifiers="accel"/>
     <key id="key-run"
        key="&run.key;"
        command="sp-cmd-run"
@@ -62,9 +45,6 @@
        key="&inspect.key;"
        command="sp-cmd-inspect"
        modifiers="accel"/>
-  <key id="key-hideSidebar"
-       keycode="VK_ESCAPE"
-       command="cmd-hide-sidebar"/>
   </keyset>
 
   <keyset id="editMenuKeys"/>
