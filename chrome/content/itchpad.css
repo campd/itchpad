@@ -134,7 +134,7 @@
 }
 
 #itchpad-toolbar textbox {
-  margin: 4px;
+  margin: 0;
 }
 
 #pair-choice > toolbarbutton {
@@ -152,6 +152,7 @@
 
 .results-panel-item-match {
   font-weight: bold;
+  background: #ddf;
 }
 
 .refresh-button {
