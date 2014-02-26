@@ -54,14 +54,6 @@
       <menupopup id="file-menu-popup">
       </menupopup>
     </menu>
-    <menupopup id="individual-file-menu-popup">
-      <menuitem id="add-new"
-                label="New..."
-                command="cmd-new"/>
-      <menuitem id="remove-file"
-                label="Remove (not implemented)"
-                command=""/>
-    </menupopup>
 
     <menu id="sp-edit-menu" label="&editMenu.label;"
           accesskey="&editMenu.accesskey;">
@@ -85,18 +77,6 @@
 
   <popupset>
     <menupopup id="directory-menu-popup">
-      <menuitem id="add-new-file"
-                label="New..."
-                command="cmd-new"/>
-      <!-- <menuitem id="open-file-in-tab"
-                label="Open In Tab"
-                command="live-preview-project"/> -->
-      <menuitem id="remove-project"
-                label="Remove this folder"
-                command="remove-project-dir"/>
-      <menuitem id="delete-file"
-                label="Delete"
-                command="cmd-delete"/>
     </menupopup>
   </popupset>
 
