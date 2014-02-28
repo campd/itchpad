@@ -6,6 +6,11 @@
   display: none;
 }
 
+/* XXX: Show menubar inline for easier debugging */
+#itchpad-menubar {
+  -moz-appearance: none;
+  border-bottom: solid 1px #ccc;
+}
 .sources-tree {
   overflow:auto;
   -moz-user-focus: true;
