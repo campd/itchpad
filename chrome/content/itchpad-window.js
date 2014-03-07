@@ -10,12 +10,23 @@ function setToolbox(toolbox) {
 
 window.addEventListener("message", receiveMessage, false);
 
+var queuedMessage = null;
+
 function receiveMessage(event)
 {
-  if (!gItchpad || !event.data) {
-    console.log("Itchpad: message received too early", event);
+  if (!event.data) {
+    console.log("Itchpad: message with no data", event);
     return;
   }
+
+  // XXX: This should use promises to manage asynchronous gItchpad loading,
+  // but API has not yet been finalized so just storing it with a variable for now.
+  if (!gItchpad) {
+    console.log("Itchpad: message received too early.  Queueing to process later", event);
+    queuedMessage = event.data
+    return;
+  }
+  queuedMessage = null;
   let data = event.data.split("|");
   let path = data[0];
   let opts = {
@@ -37,11 +48,15 @@ function init() {
     project = args[0].GetString(0);
   }
 
+  // USAGE::
+  // window.postMessage("/bin/|Project Name|Version|icon-sample.png|http://localhost", "*");
+
   service.initItchpad(window, project, gToolbox).then(pad => {
     gItchpad = pad;
 
-    // USAGE::
-    // window.postMessage("/bin/|Project Name|Version|icon-sample.png|http://localhost", "*");
+    if (queuedMessage) {
+      window.postMessage(queuedMessage, "*");
+    }
   });
 }
 
